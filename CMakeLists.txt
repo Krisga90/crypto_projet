@@ -19,25 +19,15 @@ option(COMPILe_TESTS "whether to compile tests" ON)
 set(CMAKE_MODULE_PATH "{PROJECT_SOURCE_DIR}/cmake/")
 
 include(FetchContent)
+
 FetchContent_Declare(
-    googletest-distribution
-    GIT_REPOSITORY https://github.com/google/googletest
-    GIT_TAG v1.14.0
+    cxxopts
+    GIT_REPOSITORY https://github.com/jarro2783/cxxopts
+    GIT_TAG v3.2.0
     GIT_SHALLOW TRUE
 )
 
-FetchContent_MakeAvailable(googletest-distribution)
-
-FetchContent_Declare(
-    googletest-distribution
-    GIT_REPOSITORY https://github.com/google/googletest
-    GIT_TAG v1.14.0
-    GIT_SHALLOW TRUE
-)
-
-FetchContent_MakeAvailable(googletest-distribution)
-
-
+FetchContent_MakeAvailable(cxxopts)
 
 add_subdirectory(external)
 add_subdirectory(libs)
